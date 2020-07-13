@@ -1,0 +1,17 @@
+Templates Folder:
+
+This folder holds all of the frontend html code that we render in the
+routes script. 
+
+base.html:
+Handles the button that takes us back to the home page, extended by
+every other html script
+
+index.html:
+Main page, gives choice to navigate to quiz webpage
+
+quiz.html:
+Page for quiz, provides answer form for user to submit responses
+
+quizResults.html:
+Gives user predicted answer from form reponses

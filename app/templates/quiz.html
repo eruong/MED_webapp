@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<h1>Hi, welcome!</h1>
+    <div><p>Answer the following questions:</p></div>
+
+    <form method=post>
+        <label for="transportation">What form of transportation do you use on campus?</label><br>
+        <select name="transportation" id="transportation" required>
+          <option value="9" disabled selected></option>
+          <option value="0">Walking</option>
+          <option value="1">Rollerskating</option>
+          <option value="2">Boarding</option>
+          <option value="3">Biking</option>
+          <option value="4">Scooter</option>
+        </select>
+        <br>
+      	<label for="hangout">What is your favorite hangout spot?</label><br>
+        <select name="hangout" id="hangout" required>
+          <option value="9" disabled selected></option>
+          <option value="0">Motley</option>
+          <option value="1">The Coop</option>
+          <option value="2">The Hub</option>
+          <option value="3">The Cafe</option>
+          <option value="4">Milk and Honey</option>
+          <option value="5">Jay's Place</option>
+        </select>
+        <br>
+        <label for="sushi">Do you like sushi?</label><br>
+        <select name="sushi" id="sushi" required>
+          <option value="9" disabled selected></option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <br>
+        <label for="cookies">Do you like cookies?</label><br>
+        <select name="cookies" id="cookies" required>
+          <option value="9" disabled selected></option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <br>
+      	<label for="pepo_melo">Have you ever been to Pepo Melo?</label><br>
+        <select name="pepo_melo" id="pepo_melo" required>
+          <option value="9" disabled selected></option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <br>
+      	<label for="village">How many times on average do you go to the village per month?</label><br>
+        <input type=number name =village required>
+        <br>
+      	<label for="other_campus">How many times on average do you eat at a dining hall that is not at your home campus per week?</label><br>
+        <input type=number name =other_campus required>
+        <br>
+      	<label for="breakfast">How many times on average do you eat breakfast per week?</label><br>
+        <input type=number name =breakfast required>
+        <br>
+      	<label for="dessert">Do you prefer ice cream or fruit?</label><br>
+        <select name="dessert" id="dessert" required>
+          <option value="9" disabled selected></option>
+          <option value="1">Ice Cream</option>
+          <option value="0">Fruit</option>
+        </select>
+        <br>
+        <label for="distance">How long on average does it take for you to walk to your favorite dining hall? (in minutes)</label><br>
+        <input type=number name =distance required>
+        <br>
+        <input type=submit value=Submit>
+    </form>
+
+{% endblock %}
