@@ -9,13 +9,6 @@ import numpy as np
 import pandas as pd
 
 
-# 
-# try an iris classifier...
-#
-
-
-
-print("+++ Start of iris example +++\n")
 # For Pandas's read_csv, use header=0 when you know row 0 is a header row
 # df here is a "dataframe":
 df = pd.read_csv('app\quiz.csv', header=0)    # read the file
@@ -29,7 +22,7 @@ def transform_transportation(s):
     		Transportation:
           Walking -> 0, Skating -> 1, Boarding -> 2, Biking -> 3, Scooter -> 4
     """
-    T = { 'unknown':-1, 'Walking':0, 'Skating':1, 'Boarding':2, 'Biking': 3, 'Scooter':4 }
+    T = { 'unknown':-1, 'Walking':0, 'Skating':1, 'Rollerskating':1, 'Boarding':2, 'Biking': 3, 'Scooter':4 }
     
     return T[s]
   
@@ -48,6 +41,13 @@ def transform_sushi(s):
     """
     SU = { 'Yes':1, 'No':0 }
     return SU[s]
+
+def transform_cookie(s):
+    """ from string to binary
+            likes cookies -> 1, dislikes cookies -> 0
+    """
+    CO = { 'Yes':1, 'No':0 }
+    return CO[s]
 
 def transform_pepo_melo(s):
     """ from string to binary
@@ -72,16 +72,15 @@ def transform_answer(s):
 # 
 # this applies the function transform to a whole column
 #
-df = df.drop('cookies', axis=1)
 
-functions = [transform_transportation, transform_hangout, transform_sushi, transform_pepo_melo, transform_dessert, transform_answer]
-columns = ['transportation', 'hangout', 'sushi', 'pepo_melo', 'dessert', 'answer']
-for i in range(6):
+functions = [transform_transportation, transform_hangout, transform_sushi, transform_cookie, transform_pepo_melo, transform_dessert, transform_answer]
+columns = ['transportation', 'hangout', 'sushi', 'cookies', 'pepo_melo', 'dessert', 'answer']
+for i in range(7):
     df[columns[i]]=df[columns[i]].map(functions[i])
 
 print("+++ Converting to numpy arrays... +++")
 # Data needs to be in numpy arrays - these next two lines convert to numpy arrays
-X_data_complete = df.iloc[:,0:9].values         # iloc == "integer locations" of rows/cols
+X_data_complete = df.iloc[:,0:10].values         # iloc == "integer locations" of rows/cols
 y_data_complete = df[ 'answer' ].values       # individually addressable columns (by name)
 
 X_unknown = X_data_complete[:6,:]
@@ -167,10 +166,10 @@ print("  Our predictions: ", unknown_predictions)
 # Call it with ownData() to use our example, or input your own numbers
 #
 
-def ownData(a,b,c,e,f,g,h,i,j):
-    L = [a,b,c,e,f,g,h,i,j]
+def ownData(a,b,c,d,e,f,g,h,i,j):
+    L = [a,b,c,d,e,f,g,h,i,j]
     row = np.array(L)  # makes an array-row
-    row = row.reshape(1,9)   # makes an array of array-row
+    row = row.reshape(1,10)   # makes an array of array-row
     if USE_SCALER == True:
         row = scaler.transform(row)
     d = { -1:'unknown',0:'Frank',1:'Frary',2:'Oldenborg',3:'Collins',4:'Mallot',5:'The Hoch', 6:'McConnell'} 

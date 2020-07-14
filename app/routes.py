@@ -20,6 +20,7 @@ def quiz():
         a = int(request.form['transportation'])
         b = int(request.form['hangout'])
         c = int(request.form['sushi'])
+        d = int(request.form['cookies'])
         e = int(request.form['pepo_melo'])
         f = int(request.form['village'])
         g = float(request.form['other_campus'])
@@ -27,7 +28,7 @@ def quiz():
         i = int(request.form['dessert'])
         j = float(request.form['distance'])
         
-        result = quiz_nn.ownData(a,b,c,e,f,g,h,i,j)
+        result = quiz_nn.ownData(a,b,c,d,e,f,g,h,i,j)
         
         return render_template('quizResults.html',d_hall=result)
     return render_template('quiz.html', title='Home')

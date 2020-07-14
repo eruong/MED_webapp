@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <div class="main" id="section0">
+	    <h1>Hi, welcome!</h1>
+        <p>Answer the following questions:</p>
+        <a href="#section1"><button class="button button">Start</button></a>
+    </div>
 
-	<h1>Hi, welcome!</h1>
-    <div><p>Answer the following questions:</p></div>
-
+    
+    
     <form method=post>
-        <label for="transportation">What form of transportation do you use on campus?</label><br>
+      <div class="main" id="section1">
+        <h2>What form of transportation do you use on campus?</h2><br>
+        <img src="https://media.tenor.com/images/fa115637e773f5dd9bd43634e9c93054/tenor.gif" alt="walking" style="max-width: 200px;">
+        <img src="https://i.pinimg.com/originals/0a/d0/76/0ad076a19ab7c5f249463e63aa5bc5a9.gif" alt="rollerskating" style="max-width: 200px;">
+        <img src="https://i.giphy.com/media/geFGrjlJb2t80LiJf9/source.gif" alt="boarding" style="max-width: 200px;">
+        <img src="https://i.giphy.com/media/KZPGvUz1ViJ8AP6q2T/giphy.webp" alt="biking" style="max-width: 200px;">
+        <img src="https://images.squarespace-cdn.com/content/v1/5d3b0a585c5b5f00012c479a/1564525333184-5OZ6GI3JG99BPQZLG6EN/ke17ZwdGBToddI8pDm48kI1dxkzCdoaQDevnVA9R4g1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyKi-oUoBVevRLtXFipgGDcIiZgSYdrptGW3-0WE_JDnWAg8j-9wbE7_h7uxkrF2Ds/DeerWhale-2016-PalmerScooter-Sticker.gif" alt="scooter" style="max-width: 200px;">
+        <br>
         <select name="transportation" id="transportation" required>
           <option value="9" disabled selected></option>
           <option value="0">Walking</option>
@@ -16,7 +27,12 @@
           <option value="4">Scooter</option>
         </select>
         <br>
-      	<label for="hangout">What is your favorite hangout spot?</label><br>
+        <a href="#section2"><button class="button button">Next</button></a>
+      </div>
+      <br>
+      
+      <div class="main" id="section2">
+      	<h2>What is your favorite hangout spot?</h2><br>
         <select name="hangout" id="hangout" required>
           <option value="9" disabled selected></option>
           <option value="0">Motley</option>
@@ -27,47 +43,94 @@
           <option value="5">Jay's Place</option>
         </select>
         <br>
-        <label for="sushi">Do you like sushi?</label><br>
+        <a href="#section3"><button class="button button">Next</button></a>
+      </div>
+  
+      <br>
+      <div class="main" id = "section3">
+        <h2>Do you like sushi?</h2><br>
         <select name="sushi" id="sushi" required>
           <option value="9" disabled selected></option>
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
         <br>
-        <label for="cookies">Do you like cookies?</label><br>
+        <a href="#section4"><button class="button button">Next</button></a>
+      </div>
+      
+      <br>
+      <div class="main" id="section4">
+        <h2>Do you like cookies?</h2><br>
         <select name="cookies" id="cookies" required>
           <option value="9" disabled selected></option>
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
         <br>
-      	<label for="pepo_melo">Have you ever been to Pepo Melo?</label><br>
+        <a href="#section5"><button class="button button">Next</button></a>
+      	<br>
+      </div>
+      
+      <div class="main" id="section5">
+      	<h2>Have you ever been to Pepo Melo?</h2><br>
         <select name="pepo_melo" id="pepo_melo" required>
           <option value="9" disabled selected></option>
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
         <br>
-      	<label for="village">How many times on average do you go to the village per month?</label><br>
+        <a href="#section6"><button class="button button">Next</button></a>
+        <br>
+      </div> 
+        
+      <div class="main" id = "section6">
+      	<h2>How many times on average do you go to the village per month?</h2><br>
         <input type=number name =village required>
         <br>
-      	<label for="other_campus">How many times on average do you eat at a dining hall that is not at your home campus per week?</label><br>
+        <a href="#section7"><button class="button button">Next</button></a>
+        <br>
+      </div>
+        
+      <div class="main" id = "section7">
+      	<h2>How many times on average do you eat at a dining hall that is not at your home campus per week?</h2><br>
         <input type=number name =other_campus required>
         <br>
-      	<label for="breakfast">How many times on average do you eat breakfast per week?</label><br>
+        <a href="#section8"><button class="button button">Next</button></a>
+        <br>
+      </div>
+
+      <div class="main" id="section8">
+      	<h2>How many times on average do you eat breakfast per week?</h2><br>
         <input type=number name =breakfast required>
         <br>
-      	<label for="dessert">Do you prefer ice cream or fruit?</label><br>
+        <a href="#section9"><button class="button button">Next</button></a>
+        <br>
+      </div>
+        
+      <div class="main" id = "section9">
+      	<h2>Do you prefer ice cream or fruit?</h2><br>
         <select name="dessert" id="dessert" required>
           <option value="9" disabled selected></option>
           <option value="1">Ice Cream</option>
           <option value="0">Fruit</option>
         </select>
         <br>
-        <label for="distance">How long on average does it take for you to walk to your favorite dining hall? (in minutes)</label><br>
+        <a href="#section10"><button class="button button">Next</button></a>
+        <br>
+      </div>
+        
+    	<div class="main" id = "section10">
+        <h2>How long on average does it take for you to walk to your favorite dining hall? (in minutes)</h2><br>
         <input type=number name =distance required>
         <br>
-        <input type=submit value=Submit>
+        <a href="#section11"><button class="button button">Next</button></a>
+        <br>
+      </div>
+
+      <div class="main" id = "section11">
+        <button class="button" style="vertical-align:middle"><span>Submit </span></button>
+      </div>
+
     </form>
 
 {% endblock %}

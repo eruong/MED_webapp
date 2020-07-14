@@ -6,14 +6,91 @@
       <title>-insert welcome message-</title>
       {% endif %}
       <style>
+        html {scroll-behavior: smooth;}
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
         h1 {text-align: center;}
         p {text-align: center;}
-        body {text-align: center;}
+        body {text-align: center; font-family: 'Noto Sans JP', sans-serif;}
         div {text-align: center;}
+        #section0 {height: 625px;
+          padding: 70px 0;
+        }
+        #section1 {height: 625px;
+          padding: 70px 0;
+        }
+        #section2 {height: 625px;
+        }
+        #section3 {height: 625px;
+          padding: 70px 0;
+        }
+        #section4 {height: 625px;
+          padding: 70px 0;
+        }
+        #section5 {height: 625px;
+          padding: 70px 0;
+        }
+        #section6 {height: 625px;
+          padding: 70px 0;
+        }
+        #section7 {height: 625px;
+          padding: 70px 0;
+        }
+        #section8 {height: 625px;
+          padding: 70px 0;
+        }
+        #section9 {height: 625px;
+          padding: 70px 0;
+        }
+        #section10 {height: 625px;
+          padding: 70px 0;
+        }
+        #section11 {height: 625px;
+          padding: 70px 0;
+        }
+        .button {background-color: white;color: black; border: 2px solid #e7e7e7;}
+        .button {
+          display: inline-block;
+          border-radius: 4px;
+          background-color: #f4511e;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 28px;
+          padding: 20px;
+          width: 200px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+        }
       </style>
     </head>
     <body>
-        <div><a href="/index">Home</a></div>
+        <div style="text-align:left;"><a href="/index">Home</a></div>
         <hr>
         {% block content %}{% endblock %}
     </body>
