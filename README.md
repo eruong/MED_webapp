@@ -1,4 +1,4 @@
-# Dining Hall Suggestion Quiz
+# Dining Hall Suggestion Survey
 A full-stack Flask web application that processes user input from a survey form to suggest a 5C dining hall for the user to try.
 
 ## Introduction & Motivation
