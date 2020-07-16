@@ -11,6 +11,9 @@ routes.py:
 Main script with all of the routing for the app. Handles backend scripts and
 renders templates from the templates folder. 
 
+quiz.csv:
+CSV file that holds the data used to build the NN-based quiz
+
 quiz_nn.py:
 Script that builds the predictive quiz using a neural network model and data from quiz.csv
 
