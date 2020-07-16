@@ -17,3 +17,4 @@ Project is created with:
 * Main libraries:
   + Flask: micro web framework written in Python
   + pandas/numpy: data manipulation and analysis 
+  + skikit-learn: classification algorithms
