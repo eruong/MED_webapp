@@ -1,4 +1,4 @@
-# Authors: CS-World Domination Summer19 - JG
+# Authors: Melody, Ethan, Dylan
 try:
     from flask import Flask
     import gunicorn

@@ -1,7 +1,4 @@
-
-#If you get an import error with MLPClassifier, try
-""" !conda update scikit-learn """
-
+# Authors: Melody, Ethan, Dylan
 from sklearn.datasets import fetch_openml
 from sklearn.neural_network import MLPClassifier
 
@@ -15,8 +12,6 @@ df = pd.read_csv('app\quiz.csv', header=0)    # read the file
 df.head()                                 # first few lines
 
 # One important feature is the conversion from string to numeric datatypes!
-# For _input_ features, numpy and scikit-learn need numeric datatypes
-# You can define a transformation function, to help out...
 def transform_transportation(s):
     """ from string to number
     		Transportation:
@@ -72,7 +67,6 @@ def transform_answer(s):
 # 
 # this applies the function transform to a whole column
 #
-
 functions = [transform_transportation, transform_hangout, transform_sushi, transform_cookie, transform_pepo_melo, transform_dessert, transform_answer]
 columns = ['transportation', 'hangout', 'sushi', 'cookies', 'pepo_melo', 'dessert', 'answer']
 for i in range(7):
@@ -90,7 +84,7 @@ X_known = X_data_complete[6:,:]
 y_known = y_data_complete[6:]
 
 #
-# we can scramble the remaining data if we want to (we do)
+# scramble the remaining data
 # 
 KNOWN_SIZE = len(y_known)
 indices = np.random.permutation(KNOWN_SIZE)  # this scrambles the data each time
@@ -102,7 +96,7 @@ y_known = y_known[indices]
 #
 TRAIN_FRACTION = 0.85
 TRAIN_SIZE = int(TRAIN_FRACTION*KNOWN_SIZE)
-TEST_SIZE = KNOWN_SIZE - TRAIN_SIZE   # not really needed, but...
+TEST_SIZE = KNOWN_SIZE - TRAIN_SIZE   
 X_train = X_known[:TRAIN_SIZE]
 y_train = y_known[:TRAIN_SIZE]
 
@@ -123,9 +117,6 @@ if USE_SCALER == True:
     X_test = scaler.transform(X_test)
     X_unknown = scaler.transform(X_unknown)
 
-# scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html 
-#
-
 mlp = MLPClassifier(hidden_layer_sizes=(10,10,), max_iter=400, alpha=1e-4,
                     solver='sgd', verbose=True, shuffle=True, early_stopping = False, tol=1e-4, 
                     random_state=None, # reproduceability
@@ -138,10 +129,6 @@ mlp.fit(X_train, y_train)
 print("\n\n++++++++++++  TESTING  +++++++++++++\n\n")
 print("Training set score: %f" % mlp.score(X_train, y_train))
 print("Test set score: %f" % mlp.score(X_test, y_test))
-
-# let's see the coefficients -- the nnet weights!
-# CS = [coef.shape for coef in mlp.coefs_]
-# print(CS)
 
 # predictions:
 predictions = mlp.predict(X_test)
@@ -159,14 +146,12 @@ print("Unknown predictions:")
 print("  Correct values:  ['Collins', 'Collins', 'Mallot', 'McConnell', 'The Hoch', 'The Hoch']")
 print("  Our predictions: ", unknown_predictions)
 
-#
-# You can use the function you've trained on any input data--
-# here's a function to demonstrate how!
-#
-# Call it with ownData() to use our example, or input your own numbers
-#
 
 def ownData(a,b,c,d,e,f,g,h,i,j):
+    """ ownData takes in inputs a-j
+        , the responses in the quiz, 
+        and returns a suggested dining hall
+    """
     L = [a,b,c,d,e,f,g,h,i,j]
     row = np.array(L)  # makes an array-row
     row = row.reshape(1,10)   # makes an array of array-row
