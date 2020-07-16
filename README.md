@@ -1,4 +1,4 @@
-# Dining Hall Suggestion Quiz
+# Dining Hall Suggestion Survey
 A full-stack Flask web application that processes user input from a survey form to suggest a 5C dining hall for the user to try.
 
 ## Introduction & Motivation
@@ -17,3 +17,4 @@ Project is created with:
 * Main libraries:
   + Flask: micro web framework written in Python
   + pandas/numpy: data manipulation and analysis 
+  + skikit-learn: classification algorithms
