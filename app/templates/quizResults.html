@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>We think you'd really like</h1>
-    <div><p>{{ d_hall }}</p></div>
+    <h1>We think you'd like: {{ result }}</h1>
+    <div class="main" id = "results">
+        <p>
+            {{ description }}
+        </p>
+        <img src={{ d_hall }} alt="distance" style="max-width: 500px;">
+    </div>
 {% endblock %}

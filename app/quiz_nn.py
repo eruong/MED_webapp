@@ -172,6 +172,6 @@ def ownData(a,b,c,d,e,f,g,h,i,j):
     row = row.reshape(1,10)   # makes an array of array-row
     if USE_SCALER == True:
         row = scaler.transform(row)
-    d = { -1:'unknown',0:'Frank',1:'Frary',2:'Oldenborg',3:'Collins',4:'Mallot',5:'The Hoch', 6:'McConnell'} 
+    d = { -1:'unknown',0:'Frank',1:'Frary',2:'Oldenborg',3:'Collins',4:'Malott',5:'The Hoch', 6:'McConnell'} 
 
     return d[int(mlp.predict(row))]
