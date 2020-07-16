@@ -18,3 +18,4 @@ Project is created with:
   + Flask: micro web framework written in Python
   + pandas/numpy: data manipulation and analysis 
   + skikit-learn: classification algorithms
+  + csv: read and write csv files
