@@ -11,8 +11,9 @@ Thus, we set out to create a full-stack application from scratch, building an in
 
 ## Technology/Framework
 Project is created with:  
+* HTML
+* CSS
 * Python v. 3.7
 * Main libraries:
   + Flask: micro web framework written in Python
-  + HTML/CSS: front-end interface
   + pandas/numpy: data manipulation and analysis 
