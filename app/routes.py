@@ -31,7 +31,7 @@ def quiz():
         result = quiz_nn.ownData(a,b,c,d,e,f,g,h,i,j)
         if result == "Malott":
             description = "Located at the corner of Kravis and Scripps, students really like their salmon and steak Thursday nights. Also they bake fresh chocolate cookies every weekday at 6pm!"
-            d_hall = "https://lh3.googleusercontent.com/proxy/Ja-imszkckbhPZzMHh0GtMPHaAKqdDKtSIYi8SLpsLdosBCn1HdNEsoan8MeosKt3lsAB4mdffmMncpAJfC_aQqgOh8paq2so2y_xpPNL9jjFVBndijzuruFSKJabibnMnaX343G9zcJdFK4SAOhjrORxQuS6QuzeoUQ3gHGwVwjojQusFX1wuVDqxcqgPw"
+            d_hall = "https://i2.wp.com/tsl.news/wp-content/uploads/2019/12/MealSwipes-3.jpg?resize=715%2C477&ssl=1"
         elif result == "Collins":
             description = "Recently rennovated in 2017, their new space allows for increased efficiency. Their grill has anything from chicken to pasta to Mongolian stir-fry!"
             d_hall = "https://localist-images.azureedge.net/photos/397593/card/3272d6d53dd2b3f3a138998dbf8d6aaff88ed8f1.jpg"
